@@ -4,14 +4,18 @@ using System.IO.Compression;
 using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+
 //using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 
-//Sample01.01
+////Sample01.01
 //Console.WriteLine(JsonSerializer.Serialize(new object[] { Half.MaxValue }));
+////[65500]
 //Console.WriteLine(JsonSerializer.Serialize(new object[] { Int128.MaxValue }));
+////[170141183460469231731687303715884105727]
 //Console.WriteLine(JsonSerializer.Serialize(new object[] { UInt128.MaxValue }));
+////[340282366920938463463374607431768211455]
 
 
 
@@ -41,6 +45,43 @@ using System.Text.Json.Serialization;
 //Console.WriteLine(JsonSerializer.Serialize(customer));
 
 //{"CustomerName":"Paulo","Company":{"CompanyName":"Nearsure","PhoneNumber":"N/A"}}
+
+
+
+//List<City> cities = new List<City>();
+//cities.Add(new City("London", "UK"));
+//cities.Add(new City("Paris", "France"));
+//cities.Add(new City("Tokyo", "Japan"));
+//cities.Add(new City("Sydney", "Australia"));
+//cities.Add(new City("New York", "USA"));
+
+
+
+//City[] selectedCities = Random.Shared.GetItems(cities.ToArray(), 2);
+//foreach (City city in selectedCities)
+//{
+//    Console.WriteLine(city.Name + ", " + city.Country);
+//}
+
+////London, UK
+////Paris, France
+
+
+//City[] selectedCities = cities.ToArray();
+
+//Random.Shared.Shuffle(selectedCities);
+
+//foreach (City city in selectedCities)
+//{
+//    Console.WriteLine(city.Name + ", " + city.Country);
+//}
+
+
+//London, UK
+//Sydney, Australia
+//New York, USA
+//Tokyo, Japan
+//Paris, France
 
 
 //Sample01.07
