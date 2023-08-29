@@ -1,5 +1,6 @@
 ﻿
 using Sample01;
+using System.Collections.Frozen;
 using System.IO.Compression;
 using System.Reflection;
 using System.Text.Json;
@@ -48,12 +49,12 @@ using System.Text.Json.Serialization;
 
 
 
-//List<City> cities = new List<City>();
-//cities.Add(new City("London", "UK"));
-//cities.Add(new City("Paris", "France"));
-//cities.Add(new City("Tokyo", "Japan"));
-//cities.Add(new City("Sydney", "Australia"));
-//cities.Add(new City("New York", "USA"));
+List<City> cities = new List<City>();
+cities.Add(new City("London", "UK"));
+cities.Add(new City("Paris", "France"));
+cities.Add(new City("Tokyo", "Japan"));
+cities.Add(new City("Sydney", "Australia"));
+cities.Add(new City("New York", "USA"));
 
 
 
@@ -173,3 +174,6 @@ public struct Buffer
 }
 
 */
+
+
+FrozenDictionary<string, string> dictCities = cities.ToFrozenDictionary(keySelector: x => x.Name, elementSelector: x => x.Country);
